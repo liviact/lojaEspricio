@@ -1,0 +1,160 @@
+type: collection.insomnia.rest/5.0
+name: My first collection
+meta:
+  id: wrk_553dd0f1cf634a229e674998dd27f857
+  created: 1755607683811
+  modified: 1755607683811
+  description: ""
+collection:
+  - name: Produtos
+    meta:
+      id: fld_e7f48728043e4d94bbf7a21e4061d64c
+      created: 1759859536658
+      modified: 1759859536658
+      sortKey: -1759859536658
+      description: ""
+    children:
+      - url: localhost:8081/produtos
+        name: Criar Produtos
+        meta:
+          id: req_c2882eb6cd4d40a9bff0d551a10ab324
+          created: 1759859539794
+          modified: 1759860429646
+          isPrivate: false
+          description: ""
+          sortKey: -1759859539795
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nomeProduto": "Abobrinha",
+            	"precoProduto": 5.50
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/clientes
+        name: Listar Produtos
+        meta:
+          id: req_eeac58ebd98c4d9abb82e6a74be76e7e
+          created: 1759860224502
+          modified: 1760440345344
+          isPrivate: false
+          description: ""
+          sortKey: -1759859539895
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Clientes
+    meta:
+      id: fld_12e7336fbf6b4c9a9afd6e0865cd3d25
+      created: 1760440339016
+      modified: 1760440339016
+      sortKey: -1760440339016
+      description: ""
+    children:
+      - url: localhost:8081/clientes
+        name: Criar Cliente
+        meta:
+          id: req_e32b9e210a884681894e359c162ac1ca
+          created: 1759864119155
+          modified: 1760440764720
+          isPrivate: false
+          description: ""
+          sortKey: -1760440350158
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nomeCliente": "maycon ",
+            	"cpfCliente": "5454109489"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/clientes
+        name: Listar Clientes
+        meta:
+          id: req_1069a812bebd4d1597569f08621b2d28
+          created: 1759864194562
+          modified: 1760440350286
+          isPrivate: false
+          description: ""
+          sortKey: -1760440350258
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_b3aedbb3aa5784949fa84f33d452011e0ba26ab7
+    created: 1755607683825
+    modified: 1755607951798
+  cookies:
+    - key: AEC
+      value: AVh_V2haf-SFV72C6bbaSZpPCpCzr4_xOH53dquXFX_FtDELABp1c1v80wQ
+      domain: google.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: false
+      creation: 2025-08-19T12:52:31.796Z
+      lastAccessed: 2025-08-19T12:52:31.796Z
+      sameSite: lax
+      id: 9b1ab2f6-624f-4ede-b234-5a41ba352244
+    - key: NID
+      value: 525=Fpgstdfr7byOfEbfnbYtmu4RQwbLVq4sSFlZvF4VgfhAW1fs0kiitRfHbGE16Nk7K_8dWEoXrDkNPIwUn_iceQygIMv_dmDjggTo5OiMv7xJD6fFdyFXQgBRkd_HzfvVsvE3hndwvO4pk3PZuxi51_QFfXg300RNrIp7JdoDCzUf8M1UpOz-EgSbqhJRUe2VyQTTLA0_3oREVLMamw
+      domain: google.com
+      path: /
+      httpOnly: true
+      hostOnly: false
+      creation: 2025-08-19T12:52:31.798Z
+      lastAccessed: 2025-08-19T12:52:31.798Z
+      id: cba70fd0-c511-4e06-95b7-bd717cb5362e
+environments:
+  name: Base Environment
+  meta:
+    id: env_b3aedbb3aa5784949fa84f33d452011e0ba26ab7
+    created: 1755607683818
+    modified: 1755607683818
+    isPrivate: false
