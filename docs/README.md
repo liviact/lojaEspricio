@@ -38,10 +38,15 @@
     "cpfCliente": "123.456.789-10"
 }
 ```
-
 - **Response**:
 ```
 {
 	"message": "Cliente cadastrado com sucesso!"
 } 
+```
+- **Error Response**:
+```
+{
+	"erro": "CPF já cadastrado!"
+}
 ```
