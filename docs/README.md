@@ -23,6 +23,31 @@
 } 
 ```
 
+#### PUT /produtos
+-**Descrição**: Atualiza um produto já existente
+-**Body**: 
+```
+{
+    "nomeProduto":"produtoExemplo"
+}
+```
+-**Response**:
+```
+{
+    "message":"Produto atualizado com sucesso!"
+}
+```
+
+#### DELETE /produtos /idProduto
+-**Descrição**: Deleta o produto com base no Id
+- **Response**: 
+```
+{
+    "message":"Produto deletado com sucesso!"
+}
+```
+
+
 ### Clientes
 
 #### GET /clientes
@@ -48,5 +73,29 @@
 ```
 {
 	"erro": "CPF já cadastrado!"
+}
+
+```
+#### PUT /clientes
+-**Descrição**: Atualiza um cliente já existente
+-**Body**: 
+```
+{
+    "nomeCliente": "clienteExemplo"
+}
+```
+-**Response**:
+```
+{
+    "message":"Cliente atualizado com sucesso!"
+}
+```
+
+#### DELETE /clientes /idCliente
+-**Descrição**: Deleta o cliente com base no Id
+- **Response**: 
+```
+{
+    "message":"Cliente deletado com sucesso!"
 }
 ```

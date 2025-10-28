@@ -16,6 +16,24 @@ const clienteModel = {
     }
   },
 
+  buscarUm: async (idCliente) => {
+    try {
+      const pool = await getConnection();
+
+      const querySQL = "SELECT * FROM Clientes WHERE idCliente = @idCliente";
+
+      const result = await pool
+        .request()
+        .input("idCliente", sql.UniqueIdentifier, idCliente)
+        .query(querySQL);
+
+      return result.recordset;
+    } catch (error) {
+      console.error("Erro ao buscar o cliente:", error);
+      throw error;
+    }
+  },
+
   buscarPorCPF: async (cpfCliente) => {
     try {
       const pool = await getConnection(); // cria conexão com o db
@@ -47,6 +65,36 @@ const clienteModel = {
     } catch (error) {
       console.error("Erro ao inserir cliente:", error);
       throw error; //passa o erro para o controller tratar
+    }
+  },
+  atualizarCliente: async ( nomeCliente, cpfCliente) => {
+    try {
+      const pool = await getConnection();
+      const querySQL = `
+      UPDATE clientes
+      SET nomeCliente = @nomeCliente
+      WHERE cpfCliente = @cpfCliente
+      `;
+      await pool
+        .request()
+        .input("cpfCliente", sql.VarChar(11), cpfCliente)
+        .input("nomeCliente", sql.VarChar(100), nomeCliente)
+        .query(querySQL);
+    } catch (error) {}
+  },
+  deletarCliente: async (cpfCliente) => {
+    try {
+      const pool = await getConnection();
+
+      const querySQL = "DELETE FROM clientes WHERE cpfCliente=@cpfCliente;";;
+
+      await pool.request()
+      .input('cpfCliente', sql.VarChar(11), cpfCliente)
+      .query(querySQL);
+
+    } catch (error) {
+      console.error('Erro ao deletar cliente:', error);
+      throw error;
     }
   },
 };
